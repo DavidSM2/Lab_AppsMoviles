@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -59,14 +60,24 @@ public class MainActivity extends AppCompatActivity {
         //The String writer.toString() must be parsed in the campings ArrayList by using JSONArray and JSONObject
         try {
             JSONObject object = new JSONObject(writer.toString());
+            JSONArray JSONCampings = object.getJSONObject("result").getJSONArray("records");
+            for (int i = 0; i < JSONCampings.length(); i++) {
+                JSONObject JSONCamping = JSONCampings.getJSONObject(i);
+                String nombre = JSONCamping.getString("Nombre");
+                String categoria = JSONCamping.getString("Categoria");
+                String municipio = JSONCamping.getString("Municipio");
+                String provincia = JSONCamping.getString("Provincia");
+                Camping camping = new Camping(nombre, categoria, provincia, municipio);
+                campings.add(camping);
+            }
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
         //TODO: read the data of each camping, create a new Camping object and insert it in the campings arraylist.
-        setupData(campings);
+        setupData();
     }
 
-    private void setupData(ArrayList<Camping> campings) {
+    private void setupData() {
         adapter = new CampingsAdapter(campings, getApplicationContext());
         recyclerView.setAdapter(adapter);
     }
