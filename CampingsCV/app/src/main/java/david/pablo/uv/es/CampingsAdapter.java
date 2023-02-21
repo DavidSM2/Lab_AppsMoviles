@@ -34,8 +34,7 @@ public class CampingsAdapter extends RecyclerView.Adapter<CampingsAdapter.ViewHo
 
     // vicula los datos al textview para cada item
     @Override
-    public void onBindViewHolder(@NonNull CampingsAdapter.ViewHolder holder, int
-            position) {
+    public void onBindViewHolder(@NonNull CampingsAdapter.ViewHolder holder, int position) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         final Camping camping = campings.get(position);
