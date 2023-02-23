@@ -33,14 +33,23 @@
         android:id="@+id/campingCategoria"
         android:layout_toEndOf="@+id/campingName"/>
     <TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fontFamily="casual"
+    android:textSize="50px"
+    android:text="Lugar de donde esta el camping"
+    android:textColor="@color/white"
+    android:id="@+id/campingLugar"
+    android:layout_toEndOf="@+id/campingCategoria"/>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fontFamily="casual"
         android:textSize="50px"
-        android:text="Lugar de donde esta el camping"
+        android:text="Direccion de correo del camping"
         android:textColor="@color/white"
-        android:id="@+id/campingLugar"
-        android:layout_toEndOf="@+id/campingCategoria"/>
+        android:id="@+id/campingCorreo"
+        android:layout_toEndOf="@+id/campingLugar"/>
 </LinearLayout>
 
 </androidx.cardview.widget.CardView>

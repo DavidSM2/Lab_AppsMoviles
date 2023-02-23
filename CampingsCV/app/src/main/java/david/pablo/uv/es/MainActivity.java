@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 String categoria = JSONCamping.getString("Categoria");
                 String municipio = JSONCamping.getString("Municipio");
                 String provincia = JSONCamping.getString("Provincia");
-                Camping camping = new Camping(nombre, categoria, provincia, municipio);
+                String correo = JSONCamping.getString("Email");
+                System.out.println(correo);
+                Camping camping = new Camping(nombre, categoria, provincia, municipio,correo);
                 campings.add(camping);
             }
         } catch (JSONException e) {

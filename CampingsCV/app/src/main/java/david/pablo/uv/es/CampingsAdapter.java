@@ -41,6 +41,7 @@ public class CampingsAdapter extends RecyclerView.Adapter<CampingsAdapter.ViewHo
         holder.campingName.setText(camping.getNombre());
         holder.campingCategoria.setText(camping.getCategoria());
         holder.campingLugar.setText(camping.getMunicipio() + " (" + camping.getProvincia() + ")");
+        holder.campingCorreo.setText(camping.getCorreo());
     }
 
     /**
@@ -51,11 +52,13 @@ public class CampingsAdapter extends RecyclerView.Adapter<CampingsAdapter.ViewHo
         TextView campingName;
         TextView campingCategoria;
         TextView campingLugar;
+        TextView campingCorreo;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            campingName = (TextView) itemView.findViewById(R.id.campingName);
-            campingCategoria = (TextView) itemView.findViewById(R.id.campingCategoria);
-            campingLugar = (TextView) itemView.findViewById(R.id.campingLugar);
+            campingName = itemView.findViewById(R.id.campingName);
+            campingCategoria = itemView.findViewById(R.id.campingCategoria);
+            campingLugar = itemView.findViewById(R.id.campingLugar);
+            campingCorreo = itemView.findViewById(R.id.campingCorreo);
         }
     }
 }
