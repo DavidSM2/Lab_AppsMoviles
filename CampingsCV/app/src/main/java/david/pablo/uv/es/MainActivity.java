@@ -88,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Filtrar(View view) {
-        campings_filter = new ArrayList<Camping>();
+        campings_filter = new ArrayList<>();
 
         for (Camping camping : campings)
             if (camping.getCategoria().contains("CUATRO"))
                 campings_filter.add(camping);
+
+        setupDataFiltered();
     }
 
     private void setupDataFiltered(){
